@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="ad.size" content="width=970,height=250" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>970x250</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap" rel="stylesheet"> 
+  <link href="https://fonts.googleapis.com/css2?family=Prata&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <script src="https://s0.2mdn.net/ads/studio/cached_libs/gsap_3.5.1_min.js"></script>
+</head>
+<body>
+  <div class="app">
+    <div id="logo" class="absolute top-0 left-0 w-full h-full logo"></div>
+    <div id="txt1" class="absolute top-0 left-0 w-full h-full text1">Your life, your style.</div>
+    <div id="txt4" class="absolute top-0 left-0 w-full h-full text4"></div>
+    <div id="txt5" class="absolute top-0 left-0 w-full h-full text5"></div>
+    <div id="line3" class="absolute top-0 left-0 w-full h-full text7">
+      Interactive Magazine Out Now
+    </div>
+    <div id="line4" class="absolute top-0 left-0 w-full h-full text7">
+    </div>
+    <div id="black-bg" class="absolute top-0 left-0 w-full h-full"></div>
+    <div id="image1" class="absolute top-0 right-0 h-full image1"></div>
+    <div id="image2" class="absolute top-0 right-0 h-full image2"></div>
+    <div id="image3" class="absolute top-0 right-0 h-full image3"></div>
+    <div id="txt3" class="absolute top-0 left-0 w-full h-full text3"></div>
+    <div id="txt6" class="absolute top-0 left-0 w-full h-full text6"></div>
+    <div id="cta" class="absolute top-0 left-0 w-full h-full"></div>
+  </div>
+
+  <script>
+    document.querySelector('.app').addEventListener("click", () => {
+      window.open("", "_blank");
+    });
+
+    gsap.timeline()
+    .from("#logo", {opacity:0, scale:1, y:-250, duration:0.5}, "<")
+      .from("#txt1", { duration:0}, "<")
+      .to("#txt1", {opacity:0, scale:1, ease:"in", duration:0.5},"+=1.25")
+
+      .from("#txt5", {opacity:0, duration:0.5}, "<")
+      .from("#line3", { duration:0}, "<")
+      .from("#line4", { duration:0}, "<")
+      .from("#txt4", {opacity:0, duration:0.5}, "+=0.5")
+      .to("#line3, #line4, #txt4, #txt5", {opacity:0, scale:1, ease:"in", duration:0.5},"+=1.5")
+
+      .from("#image1", {opacity:0, scale:1, duration:0.25}, "<")
+      .to("#image1", {opacity:0, scale:1}, "+=1.5")
+
+      .from("#image2", {opacity:0, scale:1, duration:0.25}, "<")
+      .to("#image2", {opacity:0, scale:1}, "+=1.5")
+
+      .from("#black-bg", {y:-250, duration:0.75}, "-=0.5")
+      .from("#txt3", {opacity:0, duration:0.5}, "<")
+      .to("#black-bg, #txt3", {opacity:0, scale:1.2, ease:"back", duration:0.7},"+=1")
+
+      .from("#image3", {opacity:0, scale:1, duration:0.5}, "<")
+      .from("#txt6", {opacity:0, duration:0.5}, "<")
+      .from("#cta", {opacity:0, scale:0.8, duration:1}, "<")
+
+  </script>
+</body>
+</html>

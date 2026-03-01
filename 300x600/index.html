@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="ad.size" content="width=300,height=600" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>300x600</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Prata&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <script src="https://s0.2mdn.net/ads/studio/cached_libs/gsap_3.5.1_min.js"></script>
+</head>
+<body>
+  <div class="app">
+    <div id="logo" class="absolute top-0 left-0 w-full h-full logo"></div>
+    <div id="line1" class="absolute top-0 left-0 w-full h-full text1">
+      Your life,
+    </div>
+    <div id="line2" class="absolute top-0 left-0 w-full h-full text1">
+      your style.
+    </div>
+    <div id="image1" class="absolute top-0 right-0 h-full image1"></div>
+    <div id="image2" class="absolute top-0 right-0 h-full image2"></div>
+    <div id="txt2" class="absolute top-0 left-0 w-full h-full text2">
+      <span>Curated</span> 
+      <span>for</span> 
+      <span>living.</span>
+    </div>
+    <div id="txt5" class="absolute top-0 left-0 w-full h-full text5"></div>
+    <div id="line3" class="absolute top-0 left-0 w-full h-full text7">
+      Interactive
+    </div>
+    <div id="line4" class="absolute top-0 left-0 w-full h-full text7">
+      Magazine
+    </div>
+    <div id="line5" class="absolute top-0 left-0 w-full h-full text7">
+      Out Now
+    </div>
+    <div id="line6" class="absolute top-0 left-0 w-full h-full text7">
+    </div>
+    <div id="txt4" class="absolute top-0 left-0 w-full h-full text4"></div>
+    <div id="txt3" class="absolute top-0 left-0 w-full h-full text3"></div>
+    <div id="blue-bg" class="absolute top-0 left-0 w-full h-full"></div>
+    <div id="image3" class="absolute top-0 right-0 h-full image3"></div>
+    <div id="txt6" class="absolute top-0 left-0 w-full h-full text6"></div>
+    <div id="cta" class="absolute top-0 left-0 w-full h-full"></div>
+  </div>
+
+  <script>
+    document.querySelector('.app').addEventListener("click", () => {
+      window.open("", "_blank");
+    });
+    
+    gsap.timeline()
+    .from("#logo", {opacity:0, y:-250, duration:0.5})
+      .from("#line1", { duration:0}, "<")
+      .from("#line2", { duration:0}, "+=0.25")
+      .from("#image1", {opacity:0,x:-250, duration:0.5}, "<")
+      .from("#txt2", { duration:0}, "-=0.5")
+      .to("#image1", {opacity:0, duration: 0.5, ease: "in"},"+=1.5")
+
+      .from("#image2", {opacity:0, scale:1, duration:0.25}, "<")
+      .to("#image2, #line1, #line2, #txt2", {opacity:0, scale:1, ease:"back", duration:0.7}, "+=2")
+
+      .from("#txt4", {opacity:0, duration:1}, "<")
+      .from("#line3", { duration:0}, "<")
+      .from("#line4", { duration:0}, "+=0.25")
+      .from("#line5", { duration:0}, "<")
+      .from("#line6", { duration:0}, "<")
+      .from("#txt5", {opacity:0, duration:1}, "<")
+      .to("#txt4, #txt5, #line3, #line4, #line5, #line6", {opacity:0, scale:1, ease:"back", duration:0.7},"+=1.5")
+
+      .from("#blue-bg", {opacity:0, y:-450, duration:0.5}, "-=0.5")
+      .from("#txt3", {opacity:0, duration:1}, "<")
+      .to("#blue-bg, #txt3", {opacity:0, scale:1, ease:"back", duration:0.7},"+=1.5")
+
+      .from("#txt6", {opacity:0, duration:0.25}, "<")
+      .from("#image3", {opacity:0, scale:1, x:-250, duration:0.25}, "<")
+      .from("#cta", {opacity:0, scale:0.9, duration:1}, "<");
+  </script>
+</body>
+</html>
